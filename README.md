@@ -72,29 +72,22 @@ khai-pha-du-lieu-lab1/
 │       └── Bai6/                        # Biểu đồ so sánh thời gian chạy Apriori vs FP-Growth
 │
 ├── Phan1/                               # Bài làm Phần 1: Tiền xử lý dữ liệu
-│   ├── Bai1/                            # Bài 2 (Tr. 15-17): Tiền xử lý dữ liệu Titanic
-│   │   ├── Bai1_cau1.ipynb ~ Bai1_cau8.ipynb # Từng câu hỏi riêng biệt (Câu 1 đến Câu 8)
-│   │   └── ...
+│   ├── Bai1/                            # Bài 1 (Tr. 15-17): Tiền xử lý dữ liệu Titanic
+│   │   └── 6451071079_LAB1_Bai1.ipynb   # Notebook tổng hợp toàn bộ 8 câu hỏi
 │   ├── Bai2/                            # Bài 2 (Tr. 28-29): Tiền xử lý dữ liệu Bank Marketing
-│   │   ├── Bai2_all.ipynb               # Notebook tổng thể toàn diện 6 câu hỏi
-│   │   └── Bai2_cau1.ipynb ~ Bai2_cau6.ipynb # Từng câu hỏi chi tiết độc lập
-│   └── Bai3/                            # Bài 2 (Tr. 30): Tiền xử lý dữ liệu cảm biến tb_tracking
-│       ├── Bai3_all.ipynb               # Notebook tổng hợp đầy đủ các yêu cầu a, b, c, d
-│       └── Bai3_caua.ipynb ~ Bai3_caud.ipynb # Notebook thực thi từng yêu cầu cụ thể
+│   │   └── 6451071079_LAB1_Bai2.ipynb   # Notebook tổng hợp toàn bộ 6 câu hỏi
+│   └── Bai3/                            # Bài 3 (Tr. 30): Tiền xử lý dữ liệu cảm biến tb_tracking
+│       └── 6451071079_LAB1_Bai3.ipynb   # Notebook tổng hợp toàn bộ các yêu cầu a, b, c, d
 │
 ├── Phan2/                               # Bài làm Phần 2: Khai phá tập phổ biến & Luật kết hợp
 │   ├── Bai2/                            # Bài 2 (Tr. 37-38): Khai phá dữ liệu Online Retail (UK)
-│   │   ├── Bai2_all.ipynb               # Báo cáo tổng thể 12 câu toàn diện
-│   │   └── Bai2_cau1.ipynb ~ Bai2_cau12.ipynb # Từng câu hỏi thành phần độc lập
+│   │   └── 6451071079_LAB1_Bai2.ipynb   # Notebook tổng hợp toàn bộ 12 câu hỏi
 │   ├── Bai5a/                           # Bài 5a (Tr. 45): Phân tích thị trường Đức (Germany)
-│   │   ├── Bai5a_all.ipynb              # Báo cáo tổng thể 12 câu (min_sup = 5%, min_conf = 50%)
-│   │   └── Bai5a_cau1.ipynb ~ Bai5a_cau12.ipynb # Từng câu hỏi thành phần độc lập
+│   │   └── 6451071079_LAB1_Bai5a.ipynb  # Notebook tổng hợp toàn bộ 12 câu hỏi
 │   └── Bai6/                            # Bài 6 (Tr. 45): So sánh hiệu năng Apriori vs FP-Growth
+│       └── 6451071079_LAB1_Bai6.ipynb   # Notebook tổng hợp toàn bộ các yêu cầu a, b, c
 │
-├── scripts/                             # Scripts tự động hóa tạo và kiểm thử notebook
-│   ├── make_phan1_bai2.py               # Tự động sinh & chạy kiểm thử Phan1/Bai2
-│   ├── make_phan2_bai2.py               # Tự động sinh & chạy kiểm thử Phan2/Bai2
-│   └── make_phan2_bai5a.py              # Tự động sinh & chạy kiểm thử Phan2/Bai5a
+├── scripts/                             # Scripts công cụ tự động hóa & kiểm thử notebook (gitignored)
 │
 ├── requirements.txt                     # Danh sách thư viện Python phụ thuộc
 ├── AGENTS.md                            # Quy chuẩn quốc tế dành cho tất cả các AI Coding Agent
@@ -106,14 +99,14 @@ khai-pha-du-lieu-lab1/
 
 ## BẢNG ÁNH XẠ BÀI TẬP & TẬP DỮ LIỆU (DATASETS)
 
-| Phần / Bài tập                        | Tập dữ liệu yêu cầu     | Đường dẫn dữ liệu                                            | Mục tiêu & Kỹ thuật chính                                                                                                                      | Thư mục bài làm              |
-| :------------------------------------ | :---------------------- | :----------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------- |
-| **Phần 1 - Bài 1**<br>_(Trang 15-17)_ | Titanic Dataset         | [datasets/titanic.csv](datasets/titanic.csv)                 | Xử lý missing `?`, trích danh hiệu `title`, tạo biến `age_class`, `fare_per_person`, vẽ biểu đồ tương quan với `survived`.                     | [Phan1/Bai1/](Phan1/Bai1/)   |
-| **Phần 1 - Bài 2**<br>_(Trang 28-29)_ | Bank Marketing          | [datasets/Bank/](datasets/Bank/)                             | Nhận diện giá trị `unknown`, mã hóa One-Hot/Label, chia nhóm thời lượng `duration`, phân tích tương quan khách hàng mở sổ tiết kiệm (`y`).     | [Phan1/Bai2/](Phan1/Bai2/)   |
-| **Phần 1 - Bài 3**<br>_(Trang 30)_    | Cảm biến môi trường     | [datasets/tb_tracking.xlsx](datasets/tb_tracking.xlsx)       | Đặt tên cột (`id`, `device_id`, `co_level`...), lọc mốc thời gian $\ge 03/01/2018$, bóc tách `minutes` trong ngày, vẽ scatter plots.           | [Phan1/Bai3/](Phan1/Bai3/)   |
-| **Phần 2 - Bài 2**<br>_(Trang 37-38)_ | Online Retail (UK)      | [datasets/Online Retail.xlsx](datasets/Online%20Retail.xlsx) | Lọc hóa đơn nước Anh, xóa hóa đơn hủy `'C'` và `'POSTAGE'`, khai phá Apriori & FP-Growth ($\text{min\_sup}=3\%, \text{min\_conf}=50\%$).       | [Phan2/Bai2/](Phan2/Bai2/)   |
-| **Phần 2 - Bài 5a**<br>_(Trang 45)_   | Online Retail (Germany) | [datasets/Online Retail.xlsx](datasets/Online%20Retail.xlsx) | Lọc thị trường Đức, xóa `'POSTAGE'` ($81.84\%$), khai phá Apriori & FP-Growth ($\text{min\_sup}=5\%, \text{min\_conf}=50\%$), so sánh đối đầu. | [Phan2/Bai5a/](Phan2/Bai5a/) |
-| **Phần 2 - Bài 6**<br>_(Trang 45)_    | Groceries Dataset       | [datasets/groceries.csv](datasets/groceries.csv)             | Mã hóa 9,835 giao dịch qua `TransactionEncoder`, đo thời gian `time.perf_counter()` khi $\text{min\_sup}$ quét từ $0.01\%$ đến $0.1\%$.        | [Phan2/Bai6/](Phan2/Bai6/)   |
+| Phần / Bài tập                        | Tập dữ liệu yêu cầu     | Đường dẫn dữ liệu                                            | Mục tiêu & Kỹ thuật chính                                                                                                                      | File notebook bài làm                                                                                     |
+| :------------------------------------ | :---------------------- | :----------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
+| **Phần 1 - Bài 1**<br>_(Trang 15-17)_ | Titanic Dataset         | [datasets/titanic.csv](datasets/titanic.csv)                 | Xử lý missing `?`, trích danh hiệu `title`, tạo biến `age_class`, `fare_per_person`, vẽ biểu đồ tương quan với `survived`.                     | [Phan1/Bai1/6451071079_LAB1_Bai1.ipynb](Phan1/Bai1/6451071079_LAB1_Bai1.ipynb)                           |
+| **Phần 1 - Bài 2**<br>_(Trang 28-29)_ | Bank Marketing          | [datasets/Bank/](datasets/Bank/)                             | Nhận diện giá trị `unknown`, mã hóa One-Hot/Label, chia nhóm thời lượng `duration`, phân tích tương quan khách hàng mở sổ tiết kiệm (`y`).     | [Phan1/Bai2/6451071079_LAB1_Bai2.ipynb](Phan1/Bai2/6451071079_LAB1_Bai2.ipynb)                           |
+| **Phần 1 - Bài 3**<br>_(Trang 30)_    | Cảm biến môi trường     | [datasets/tb_tracking.xlsx](datasets/tb_tracking.xlsx)       | Đặt tên cột (`id`, `device_id`, `co_level`...), lọc mốc thời gian $\ge 03/01/2018$, bóc tách `minutes` trong ngày, vẽ scatter plots.           | [Phan1/Bai3/6451071079_LAB1_Bai3.ipynb](Phan1/Bai3/6451071079_LAB1_Bai3.ipynb)                           |
+| **Phần 2 - Bài 2**<br>_(Trang 37-38)_ | Online Retail (UK)      | [datasets/Online Retail.xlsx](datasets/Online%20Retail.xlsx) | Lọc hóa đơn nước Anh, xóa hóa đơn hủy `'C'` và `'POSTAGE'`, khai phá Apriori & FP-Growth ($\text{min\_sup}=3\%, \text{min\_conf}=50\%$).       | [Phan2/Bai2/6451071079_LAB1_Bai2.ipynb](Phan2/Bai2/6451071079_LAB1_Bai2.ipynb)                           |
+| **Phần 2 - Bài 5a**<br>_(Trang 45)_   | Online Retail (Germany) | [datasets/Online Retail.xlsx](datasets/Online%20Retail.xlsx) | Lọc thị trường Đức, xóa `'POSTAGE'` ($81.84\%$), khai phá Apriori & FP-Growth ($\text{min\_sup}=5\%, \text{min\_conf}=50\%$), so sánh đối đầu. | [Phan2/Bai5a/6451071079_LAB1_Bai5a.ipynb](Phan2/Bai5a/6451071079_LAB1_Bai5a.ipynb)                       |
+| **Phần 2 - Bài 6**<br>_(Trang 45)_    | Groceries Dataset       | [datasets/groceries.csv](datasets/groceries.csv)             | Mã hóa 9,835 giao dịch qua `TransactionEncoder`, đo thời gian `time.perf_counter()` khi $\text{min\_sup}$ quét từ $0.01\%$ đến $0.1\%$.        | [Phan2/Bai6/6451071079_LAB1_Bai6.ipynb](Phan2/Bai6/6451071079_LAB1_Bai6.ipynb)                           |
 
 ---
 

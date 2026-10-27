@@ -127,13 +127,13 @@ def get_img_dir(subpath=""):
 │   ├── Phan1/ (Bai1, Bai2, Bai3)
 │   └── Phan2/ (Bai2, Bai5a, Bai6)
 ├── Phan1/                      # Bài làm Phần 1 - Tiền xử lý dữ liệu
-│   ├── Bai1/                   # Titanic (.ipynb)
-│   ├── Bai2/                   # Bank Marketing (.ipynb)
-│   └── Bai3/                   # Cảm biến xưởng (.ipynb)
+│   ├── Bai1/                   # 6451071079_LAB1_Bai1.ipynb (Titanic)
+│   ├── Bai2/                   # 6451071079_LAB1_Bai2.ipynb (Bank Marketing)
+│   └── Bai3/                   # 6451071079_LAB1_Bai3.ipynb (Cảm biến xưởng)
 ├── Phan2/                      # Bài làm Phần 2 - Khai phá tập phổ biến & Luật kết hợp
-│   ├── Bai2/                   # Online Retail UK (.ipynb)
-│   ├── Bai5a/                  # Online Retail Germany (.ipynb)
-│   └── Bai6/                   # So sánh Apriori vs FP-Growth (.ipynb)
+│   ├── Bai2/                   # 6451071079_LAB1_Bai2.ipynb (Online Retail UK)
+│   ├── Bai5a/                  # 6451071079_LAB1_Bai5a.ipynb (Online Retail Germany)
+│   └── Bai6/                   # 6451071079_LAB1_Bai6.ipynb (So sánh Apriori vs FP-Growth)
 ├── scripts/                    # Scripts công cụ sinh code / tự động hóa (gitignored)
 ├── requirements.txt            # Danh sách thư viện Python
 ├── AGENTS.md                   # Hướng dẫn chung cho tất cả AI Agent
@@ -156,12 +156,14 @@ Mọi Agent có thể gọi hoặc làm theo 3 quy trình công việc chuẩn s
 
 ### Workflow 2: Triển khai giải bài tập (Lab Implementation)
 1. Đọc yêu cầu bài tập từ `docs/bai_tap_lab1.md`.
-2. Tạo/cập nhật file Notebook `.ipynb` tại đúng thư mục phân mục (`Phan1/BaiX` hoặc `Phan2/BaiX`).
+2. Tạo/cập nhật file Notebook duy nhất cho mỗi bài: `<MSSV>_LAB1_Bai<X>.ipynb` tại đúng thư mục phân mục (`Phan1/BaiX` hoặc `Phan2/BaiX`).
 3. Đảm bảo cấu trúc mỗi bài:
-   - Cell Markdown: Đề bài, câu hỏi, ý nghĩa thuộc tính.
-   - Cell Code: Khai báo định danh sinh viên, hàm `get_data_path()`, hàm `get_img_dir()`, code xử lý dữ liệu, biểu đồ trực quan.
-   - Cell Markdown: Nhận xét kết quả cụ thể, phân tích nghiệp vụ rõ ràng.
-4. Chạy kiểm thử notebook bằng `.venv/bin/jupyter execute <notebook.ipynb>`.
+   - Cell Markdown đầu: Tiêu đề + định danh sinh viên `Nguyễn Thành Trí` - MSSV: `6451071079`.
+   - Lặp lại cặp `Markdown (đề câu hỏi) -> Code (giải)`:
+     - Cell Markdown: Ghi rõ nội dung câu hỏi/yêu cầu đề bài.
+     - Cell Code: Khai báo định danh, hàm `get_data_path()`, `get_img_dir()`, code xử lý dữ liệu, biểu đồ trực quan.
+   - Không tạo các cell Markdown nhận xét riêng biệt (nhận xét ngắn nếu có được in trực tiếp bằng `print()` trong code).
+4. Chạy kiểm thử notebook bằng `.venv/bin/jupyter nbconvert --execute <notebook.ipynb>`.
 
 ### Workflow 3: Kiểm định chất lượng & Tiêu chuẩn nộp bài (Quality Review)
 1. **Kiểm tra thông tin sinh viên**: `Nguyễn Thành Trí` - `6451071079` xuất hiện đúng quy chuẩn.

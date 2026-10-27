@@ -36,9 +36,9 @@
 
 1. **Vị trí tập dữ liệu**:
    - Tất cả dữ liệu nguồn được lưu tại thư mục [datasets/](datasets/):
-     - `titanic.csv`: Tiền xử lý dữ liệu Titanic (Phần 1 - Bài 2 tr. 15-17).
-     - `Bank/bank.csv`, `Bank/bank-full.csv`: Dữ liệu Bank Marketing (Phần 1 - Bài 2 tr. 28-29).
-     - `tb_tracking.xlsx`: Dữ liệu cảm biến môi trường xưởng (Phần 1 - Bài 2 tr. 30).
+     - `titanic.csv`: Tiền xử lý dữ liệu Titanic (Phần 1 - Bài 1).
+     - `Bank/bank.csv`, `Bank/bank-full.csv`: Dữ liệu Bank Marketing (Phần 1 - Bài 2).
+     - `tb_tracking.xlsx`: Dữ liệu cảm biến môi trường xưởng (Phần 1 - Bài 3).
      - `Online Retail.xlsx`: Khai phá tập phổ biến & luật kết hợp (Phần 2 - Bài 2, Bài 5a).
      - `groceries.csv`: So sánh hiệu năng Apriori và FP-Growth (Phần 2 - Bài 6).
 2. **Đường dẫn tương đối an toàn trong code**:
@@ -75,25 +75,37 @@
 
 ## 4. QUY CHUẨN TRÌNH BÀY CODE VÀ NOTEBOOK
 
-1. **Định danh sinh viên bắt buộc**:
-   - Ô Markdown đầu tiên của notebook:
+1. **Quy tắc đặt tên file notebook**:
+   - Mỗi bài tập là **MỘT notebook duy nhất**, gộp toàn bộ các câu hỏi của bài đó.
+   - **Tuyệt đối không** tách từng câu hỏi ra thành file riêng (không tạo `Bai1_cau1.ipynb`, `Bai1_cau2.ipynb`, v.v.).
+   - Tên file theo quy ước: `<MSSV>_LAB1_Bai<X>.ipynb`
+     - `Phan1/Bai1/6451071079_LAB1_Bai1.ipynb` — Titanic
+     - `Phan1/Bai2/6451071079_LAB1_Bai2.ipynb` — Bank Marketing
+     - `Phan1/Bai3/6451071079_LAB1_Bai3.ipynb` — tb_tracking
+     - `Phan2/Bai2/6451071079_LAB1_Bai2.ipynb` — Online Retail UK
+     - `Phan2/Bai5a/6451071079_LAB1_Bai5a.ipynb` — Online Retail Germany
+     - `Phan2/Bai6/6451071079_LAB1_Bai6.ipynb` — Groceries
+
+2. **Cấu trúc bên trong notebook**:
+   - **Cell Markdown đầu tiên**: Tiêu đề + định danh sinh viên:
      ```markdown
      # Nguyễn Thành Trí - MSSV: 6451071079
-
      ## [Tên phần / bài tập cụ thể]
      ```
-   - Mỗi ô code chính:
+   - **Cell Code đầu tiên**: Import thư viện, hàm tiện ích, in định danh:
      ```python
      # Nguyễn Thành Trí - 6451071079
      print("Họ tên: Nguyễn Thành Trí - MSSV: 6451071079")
      ```
-2. **Cấu trúc mỗi bài giải (Markdown -> Code -> Nhận xét)**:
-   - **Cell Markdown**: Nêu rõ đề bài, câu hỏi, ý nghĩa các tham số/thuộc tính.
-   - **Cell Code**: Code chuẩn mực, có chú thích (comment), xử lý ngoại lệ và hiển thị trực quan (`display()`, `head()`, biểu đồ).
+   - **Các câu hỏi tiếp theo**: Lặp lại cặp `Markdown (câu hỏi) → Code (giải)`:
+     - **Cell Markdown**: Ghi lại nội dung câu hỏi/yêu cầu đề bài (ví dụ: "**Câu 3**: Vẽ biểu đồ khảo sát...").
+     - **Cell Code**: Code giải bài, có chú thích ngắn gọn, hiển thị kết quả (`display()`, `head()`, biểu đồ).
+   - **KHÔNG tạo cell Markdown nhận xét** sau mỗi câu code. Nếu cần nhận xét ngắn, viết bằng `print()` trực tiếp trong cell code.
+
 3. **Trực quan hóa dữ liệu (Visualization)**:
    - Sử dụng `matplotlib` và `seaborn`.
    - Luôn thiết lập tiêu đề (`plt.title`), nhãn trục (`plt.xlabel`, `plt.ylabel`), chú thích (`plt.legend`) và lưới (`plt.grid(True, alpha=0.3)`).
-   - Khi cần lưu ảnh minh họa cho báo cáo Word: lưu vào thư mục `images/<PhanX>/<BaiY>/` bằng hàm `get_img_dir("PhanX/BaiY")` với `plt.savefig(os.path.join(img_dir, 'tên_anh.png'), bbox_inches='tight', dpi=300)`. Tuyệt đối không tạo thư mục `images` lồng trong thư mục con bài làm.
+   - Lưu ảnh minh họa cho báo cáo Word: lưu vào `images/<PhanX>/<BaiY>/` bằng hàm `get_img_dir("PhanX/BaiY")` với `plt.savefig(os.path.join(img_dir, 'tên_anh.png'), bbox_inches='tight', dpi=300)`. Tuyệt đối không tạo thư mục `images` lồng trong thư mục con bài làm.
 
 4. **Quy tắc quản lý file & Giữ sạch thư mục gốc (Root Hygiene)**:
    - **Tuyệt đối không** tạo các file script tạm, file nháp hoặc file vá lỗi (như `fix_*.py`, `test_*.py`, `temp_*.py`, `generate_*.py`) tại thư mục gốc.
